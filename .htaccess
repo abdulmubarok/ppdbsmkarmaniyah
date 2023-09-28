@@ -1,7 +1,7 @@
 
 Options All -Indexes
-ErrorDocument 404 http://localhost/ppdb56/home?page=404
-ErrorDocument 403 http://localhost/ppdb56/home?page=403
+ErrorDocument 404 http://localhost/ppdbsmk/home?page=404
+ErrorDocument 403 http://localhost/ppdbsmk/home?page=403
 <IfModule mod_rewrite.c>
 RewriteEngine on
 #Redirect to Https
