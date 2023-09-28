@@ -1,20 +1,13 @@
-
-Options All -Indexes
-ErrorDocument 404 http://localhost/ppdbsmk/home?page=404
-ErrorDocument 403 http://localhost/ppdbsmk/home?page=403
+# BEGIN WordPress
 <IfModule mod_rewrite.c>
-RewriteEngine on
-#Redirect to Https
-#RewriteCond %{HTTPS} off
-#RewriteCond %{HTTP:X-Forwarded-Proto} !https
-#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteRule ^home index.php [NC,L]
-RewriteRule ^buat-akun buat.akun.php [NC,L]
-RewriteRule ^daftar daftar.php [NC,L]
-RewriteRule ^profile profile.php [NC,L]
-RewriteRule ^bayar pembayaran.php [NC,L]
-RewriteRule ^report pdf.php [NC,L]
-RewriteRule ^kartu kartu.php [NC,L]
-RewriteRule ^status status.php [NC,L]
-RewriteRule ^login login.php [NC,L]
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 </IfModule>
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
